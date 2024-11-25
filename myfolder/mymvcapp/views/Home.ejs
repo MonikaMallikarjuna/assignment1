@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+</head>
+<body>
+    <center>Welcome</center>
+    <table border="1">
+        <tr>
+            <th>Emp Id</th>
+            <th>Emp Name</th>
+            <th>Emp Email</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <% 
+        employeeList.forEach(emp => { %>
+            <tr>
+                <td><%= emp.eid %></td>
+                <td><%= emp.ename %></td>
+                <td><%= emp.email %></td>
+                <td><a href="/api/v1/employees/update/<%= emp._id %>">Update</a></td>
+                <td><a href="/api/v1/employees/delete/<%= emp._id %>">Delete</a></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
